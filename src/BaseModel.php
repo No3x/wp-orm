@@ -60,6 +60,7 @@ abstract class BaseModel implements ModelInterface
 
             if (array_key_exists($property, $model_props)) {
                 $this->{$property} = $arguments[0];
+                return $this;
             }
         }
     }
@@ -142,7 +143,7 @@ abstract class BaseModel implements ModelInterface
             $wpdb->update(static::get_table(), $props, array(static::get_primary_key() => $this->{static::get_primary_key()}));
         }
 
-		return $this->{static::get_primary_key()};
+        return $this->{static::get_primary_key()};
     }
 
     /**

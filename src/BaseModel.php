@@ -221,7 +221,7 @@ abstract class BaseModel implements ModelInterface
     /**
      * Return EVERY instance of this model from the database, with NO filtering.
      *
-     * @return array
+     * @return BaseModel[]
      */
     public static function all()
     {
